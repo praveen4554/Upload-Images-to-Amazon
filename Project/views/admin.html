@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+
+	<title>TITA Admin</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="../js/photogrid_utils.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+	<script type="text/javascript">
+	var app=angular.module("myApp",[]);
+	app.controller('myController',['$scope','$http',function($scope,$http){
+
+		$scope.Signin=function(){
+			var email=$scope.inputEmail;
+			var pwd=$scope.inputPassword;
+			$http.post('/checkloginbox',{"email":$scope.inputmail,"password":pwd}).then(function(req,res){
+				console.log("success");
+			});
+		}
+	}]);
+	/*$(function(){
+		var host = '{{host}}';
+		$(document).on('click', '.SignupD', function(){
+			console.log("sanjay1");
+
+				var uploadURL = '/checkloginbox';
+				var EmailId = $('#inputEmail').val();
+				var PassworD = $('#inputPassword').val();
+				var data = {email: EmailId, password: PassworD};
+									$.ajax({
+					        type: 'POST',
+
+					        data: JSON.stringify(data),
+					       /* data: {
+					            blob: {wob:"1",job:"2", ar:[1,2,{a:'b'}]}
+					        },
+					        contentType: "application/json",
+					        //contentType: "application/x-www-form-urlencoded",
+					        dataType:'json',
+					        url: uploadURL,
+
+					    });
+
+
+
+
+			})
+	})*/
+	</script>
+
+</head>
+<body id="login">
+	<div class="progressBarDiv">
+		<div class="progress"></div>
+	</div>
+	<h5 class="status"></h5>
+	<div class="container">
+
+		<form class="form-signin" ng-controller="myController">
+
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<label for="inputEmail" class="sr-only">Email address</label>
+			<input type="email" id="inputEmail" ng-model="inputmail" class="form-control" placeholder="Email address" required autofocus>
+			<label for="inputPassword" class="sr-only">Password</label>
+			<input type="password" id="inputPassword" ng-model="inputPassword" class="form-control" placeholder="Password" required>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="remember-me"> Remember me
+				</label>
+			</div>
+			<a href="aftradmin" class="btn btn-lg btn-primary btn-block SignupD" type="submit" ng-click="Signin()">Sign in</a>
+		</form>
+
+	</div> <!-- /container -->
+
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

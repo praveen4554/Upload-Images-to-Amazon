@@ -1,0 +1,18 @@
+<div><h2  class="col-sm-12" style="margin-top: 66px;">Past Events</h2>
+  <div class="row col-sm-4" ng-repeat="slide in pevents| orderBy:'date':false">
+      {{uevents.data}}
+                <div class="first">
+                    <div class="second">
+        <span>{{slide.date | date:'yyyy-MM-dd'}}</span>
+          <div ng-if="slide.url!=undefined"><img class="second1" src="{{slide.url}}" alt="Generic placeholder image"></span></div>
+          <div class="headingz">
+                        <div class="heablur">
+                        {{slide.heading}}
+                    </div>
+                    </div>
+                    <div class="para">{{slide.para}}</div>
+          <span class="btn btn-info btn-sm" role="button"><a href="#viewDetails" ng-click="Details($index,'past')">View details »</a></span>
+        </div>
+        </div>
+        </div>
+        </div>

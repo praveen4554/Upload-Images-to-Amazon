@@ -1,0 +1,7 @@
+{
+	"host":"http://localhost:3000",
+	"S3AccessKey":"AKIAJISNY2J4RKPLHF2A",
+	"S3Secret":"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",
+	"S3Bucket":"photogridsanjay",
+	"dbURL":"mongodb://indian:indian@ds039155.mongolab.com:39155/cashonly"
+}

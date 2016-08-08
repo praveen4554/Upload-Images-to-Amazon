@@ -1,0 +1,6 @@
+<div class="row" ng-repeat="slide in tevents">
+        <span nf-if="slide.date!=undefined">{{slide.date | date:'yyyy-MM-dd'}}</span>
+          <div ng-if="slide.url!=undefined"><img src="{{slide.url}}"></div>
+          <div ng-if="slide.heading!=undefined"><h2>{{slide.heading}}</h2></div>
+          <div ng-if="slide.para!=undefined"><p>{{slide.para}}</p></div>
+        </div>

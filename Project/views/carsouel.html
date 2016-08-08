@@ -1,0 +1,32 @@
+<div>
+      <carousel interval="myInterval" style="margin-right: -10%;margin-left: -10%;">
+        <slide ng-repeat="slide in gallery" active="slide.active">
+          <img ng-if="slide[0].url!=undefined" ng-src="{{slide[0].url}}">
+          <img ng-if="slide[1].url!=undefined" ng-src="{{slide[1].url}}">
+          <div class="carousel-caption">
+            <h4 ng-if="slide[0].Heading!=undefined">{{slide[0].Heading}}</h4>
+            <h4 ng-if="slide[1].Heading!=undefined">{{slide[1].Heading}}</h4>
+          </div>
+        </slide>
+      </carousel>
+</div>
+<div id="past_events">
+      <h2  class="col-sm-12">Past Events</h2>
+      <div class="row col-sm-4" ng-repeat="slide in pevents| orderBy:'date'| limitTo : 3">
+          <img class="img-circle" src="{{slide.url}}" alt="Generic placeholder image" width="140" height="140"></span>
+          <h2>{{slide.heading}}</h2>
+          <p style="display: inline;">{{slide.para}}</p>
+          <span class="btn btn-info btn-sm" role="button"><a href="#viewDetails" ng-click="Details($index,'past')">View details »</a></span>
+  </div>
+</div>
+<div class="col-sm-12"><a href="#pastevents" style="float: right;">show more..</a></div>
+<div id="up_events">
+      <h2 class="col-sm-12">Upcoming Events</h2>
+      <div class="row col-sm-4" ng-repeat="slide in uevents| orderBy:'date'| limitTo : 3">
+          <img class="img-circle" src="{{slide.url}}" alt="Generic placeholder image" width="140" height="140"></span>
+          <h2>{{slide.heading}}</h2>
+          <p>{{slide.para}}</p>
+          <span class="btn btn-info btn-sm" role="button"><a href="#viewDetails" ng-click="Details($index,'up')">View details »</a></span>
+      </div>
+</div>
+<div class="col-sm-12"><a href="#upevents" style="float: right;">show more..</a></div>

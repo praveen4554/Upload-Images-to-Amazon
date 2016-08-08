@@ -1,0 +1,19 @@
+     
+     <div> <h2 class="col-sm-12" style="margin-top: 66px;">Upcoming Events</h2>
+      <div class="row col-sm-4" ng-repeat="slide in uevents| orderBy:'date':false">
+      {{uevents.data}}
+                <div class="first">
+                    <div class="second">
+        <span>{{slide.date | date:'yyyy-MM-dd'}}</span>
+          <img class="second1" src="{{slide.url}}" alt="Generic placeholder image"></span>
+          <div class="headingz">
+                        <div class="heablur">
+                        {{slide.heading}}
+                    </div>
+                    </div>
+                    <div class="para">{{slide.para}}</div>
+          <span class="btn btn-info btn-sm" role="button"><a href="#viewDetails" ng-click="Details($index,'up')">View details »</a></span>
+        </div>
+        </div>
+        </div>
+        </div>

@@ -1,0 +1,23 @@
+{
+  "name": "Photogrid",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "formidable": "*",
+    "gm": "*",
+    "hogan-express": "*",
+    "knox": "*",
+    "mongoose": "*",
+    "path": "*",
+    "shortid": "^2.2.6",
+    "socket.io": "*"
+  }
+}
